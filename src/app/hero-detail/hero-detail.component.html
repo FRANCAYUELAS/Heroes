@@ -1,0 +1,42 @@
+<div *ngIf="hero">
+  <h2 class="text-white">Details : {{hero.name | uppercase}} </h2>
+  <div class="text-white"><span >id: </span>{{hero.id}}</div>
+  <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+  <div>
+    <label for="hero-name" class="text-white font-bold">Hero name: </label>
+    <input class="p-2 text-base	" id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+  </div>
+
+  <h2 class="text-red-600">Comics</h2>
+  <ul>
+    <li *ngFor="let comic of this.hero.comics.items">
+      <a target="_blank" class="text-white" href="{{comic.resourceURI}}?ts=heroes&apikey=5655ce53e8e5750adf4d996dca4a9495&hash=f159dbf44a48da73c405e9b0ed934e92">
+        <span style="color: rgb(255, 255, 255);">{{comic.name}}</span> {{comic.resourceURI}}
+      </a>
+    </li>
+  </ul>
+    
+  <br>
+
+  <h2  class="text-red-600">Series</h2>
+  <ul>
+    <li *ngFor="let serie of this.hero.series.items">
+      <a target="_blank" class="text-white" href="{{serie.resourceURI}}?ts=heroes&apikey=5655ce53e8e5750adf4d996dca4a9495&hash=f159dbf44a48da73c405e9b0ed934e92">
+        <span style="color: rgb(255, 255, 255);">{{serie.name}}</span>{{serie.resourceURI}}
+      </a>
+    </li>
+  </ul>
+
+  <br>
+
+  <h2 class="text-red-600">Eventos</h2>
+  <ul>
+    <li *ngFor="let event of this.hero.events.items">
+      <a target="_blank" class="text-white" href="{{event.resourceURI}}?ts=heroes&apikey=5655ce53e8e5750adf4d996dca4a9495&hash=f159dbf44a48da73c405e9b0ed934e92">
+        <span style="color: rgb(255, 255, 255);">{{event.name}}</span>{{event.resourceURI}}
+      </a>
+    </li>
+  </ul>
+  <button class="mt-5 mr-2 p-4 rounded text-base bg-white hover:bg-red-600 disabled:cursor-auto" type="button" (click)="goBack()">go back</button>
+  <!-- <button type="button" (click)="save()">save</button> -->
+</div>

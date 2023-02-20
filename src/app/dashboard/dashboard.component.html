@@ -1,0 +1,12 @@
+<app-hero-search></app-hero-search>
+<h2 class="bg-red-700 text-white text-center	">The best Heroes</h2>
+<div class="heroes-menu" class="p-0 m-auto flex flex-row flex-wrap justify-around content-start items-start">
+  <a class="bg-white hover:bg-red-700 rounded-sm p-4 text-xl no-underline inline-block text-black text-center w-full  order-none self-auto box-content w-40 mt-3	 gap-1	 		" *ngFor="let hero of heroes"
+      routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+      <img src="{{hero.thumbnail.path}}.{{hero.thumbnail.extension}}" alt="">
+  </a>
+  
+</div>
+
+

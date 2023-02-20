@@ -1,0 +1,15 @@
+<h2 class="text-white">My Heroes</h2>
+
+<button (click)="principio()"><<</button>
+<button (click)="atras()"><</button>
+{{page + 1}} / {{totalPages + 1}}
+<button (click)="delante()">></button>
+<button (click)="ultima()">>></button>
+<ul class="list-none p-0 w-60	 m-24	" class="heroes">
+  <li *ngFor="let hero of heroes" class="relative cursor-pointer hover:left-1">
+    <a class="  no-underline rounded block w-full m-5	p-3	h-12  bg-none text-white hover:text-white hover:bg-red-600" routerLink="/detail/{{hero.id}}">
+      <span class=" bg-black text-white  p-2 relative text-right rounded leading-4 -top-px	h-7	 min-w-16 	" >{{hero.id}}</span> {{hero.name}}
+    </a>
+    
+  </li>
+</ul>

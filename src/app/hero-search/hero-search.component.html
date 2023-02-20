@@ -1,0 +1,12 @@
+<div id="search-component">
+  <label for="search-box" class="text-2xl	my-4 font-bold	block	text-white		">Hero Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value) " class="p-2	w-full	max-w-screen-sm	box-border block	border-red-600	border-4	rounded-2xl		my-4 	" />
+
+  <ul class="search-result" class="mt-0	pl-0	">
+    <li *ngFor="let hero of heroes$ | async" class="list-none	w-full max-w-screen-sm p-2	box-border	no-underline	text-black	hover:hover:bg-red-700	hover:text-white 	" >
+      <a routerLink="/detail/{{hero.id}} " class="inline-block	">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
