@@ -14,8 +14,8 @@ export class HeroService {
   //Es normal dividir la url en variables por parametro, url externa 
   private url:string = 'https://gateway.marvel.com/v1/public/characters';
   private ts = '?ts=heroes';
-  private apiKey = '&apikey=5655ce53e8e5750adf4d996dca4a9495'
-  private hash = '&hash=f159dbf44a48da73c405e9b0ed934e92'
+  private apiKey = '&apikey=5655ce53e8e5750adf4d996dca4a9495';
+  private hash = '&hash=f159dbf44a48da73c405e9b0ed934e92';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -52,7 +52,7 @@ export class HeroService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      //No es el caso pero podriamos tener que marcar algun error ante un código, por ejemplo tiene sentido que si un herore no esta
+      //No es el caso pero podriamos tener que marcar algun error ante un código, por ejemplo tiene sentido que si un heroe no esta
       //bien consturido se marque como erroneo, pero no se rompa el flujo
       console.error(error); // log to console instead
 
